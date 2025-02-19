@@ -1,0 +1,279 @@
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  user-select: none;
+  background: #fffefe;
+  /* Biru muda untuk latar belakang */
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 80%;
+  display: flex;
+  flex-direction: column; /* Ubah layout menjadi kolom */
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+
+.calculator {
+  flex: 1;
+  padding: 20px;
+  border-radius: 8px;
+  background: #1c6075;
+  /* Gelap untuk kalkulator */
+  color: #fff;
+  /* Teks putih agar kontras */
+}
+
+.history {
+  width: 100%; /* Sesuaikan dengan layout kolom */
+  margin-top: 20px; /* Jarak antara kalkulator dan history */
+  max-height: 20rem; /* Batasi tinggi maksimal */
+  padding: 20px;
+  border-radius: 8px;
+  background: #4e4848; /* Abu-abu untuk history */
+  color: #e9dcdc;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+#historyList {
+  flex-grow: 1; /* Membuat elemen ini mengisi ruang kosong di container */
+  height: 100%; /* Pastikan tinggi mengikuti container */
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #e0e0e0;
+  background: #fff; /* Warna putih untuk background history list */
+  border-radius: 4px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#historyList::-webkit-scrollbar {
+  width: 8px;
+}
+
+#historyList::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+#historyList::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#historyList::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* Clear button */
+#clearHistory {
+  align-self: center;
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  transition: 0.1s;
+  background: #f06292;
+  /* Merah muda untuk tombol Clear */
+  color: #fff;
+  cursor: pointer;
+}
+
+#clearHistory:hover {
+  background: #ec407a;
+  /* Merah muda lebih gelap saat hover */
+}
+
+/* History items */
+.history ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.history ul li {
+  padding: 10px;
+  margin: 5px 0;
+  background: #f5f5f5;
+  /* Abu-abu muda untuk item history */
+  color: #333;
+  border-radius: 4px;
+  word-wrap: break-word;
+}
+
+/* History container */
+.history {
+  width: 100%;
+  /* Lebarkan kotak history menjadi 25% dari lebar kontainer */
+  max-height: 30rem;
+  padding: 20px;
+  border-radius: 8px;
+  background: #1c6075;
+  /* Abu-abu untuk history */
+  color: #e9dcdc;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: none;
+  /* Mulai tersembunyi */
+}
+
+/* History List Styling */
+#historyList {
+  flex-grow: 1;
+  height: 70%;
+  /* Perluas ketinggian kotak history */
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #e0e0e0;
+  background: #fff;
+  border-radius: 4px;
+  overflow-y: auto;
+}
+
+#historyList::-webkit-scrollbar {
+  width: 8px;
+}
+
+#historyList::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+#historyList::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#historyList::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* Gaya umum untuk tombol toggle */
+#toggle {
+  align-self: center;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+  background: #42757c; /* Warna biru kehijauan */
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  width: auto; /* Atur agar lebar tombol otomatis sesuai konten */
+}
+
+/* Hover dan fokus pada tombol */
+#toggle:hover {
+  background: #a3ced3; /* Warna biru lebih terang */
+  transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+/* Tombol pada layar kecil */
+/* Tombol pada layar kecil */
+@media (max-width: 768px) {
+  #toggle {
+    max-width: 80px; /* Batasi lebar maksimum tombol */
+    margin: 5px; /* Margin kecil agar terlihat rapi */
+    padding: 10px; /* Padding tetap nyaman */
+    font-size: 16px; /* Ukuran font tetap seragam */
+  }
+}
+
+
+/* Row style */
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.row button {
+  flex: 1;
+  height: 60px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  margin: 5px;
+  border-radius: 4px;
+  transition: 0.1s;
+  background: #6cbbc9;
+  /* Gradasi merah muda ke biru muda */
+  color: #fff;
+  /* Teks putih pada tombol */
+}
+
+.row button:hover {
+  background: #497b81;
+  /* Gradasi lebih gelap saat hover */
+}
+
+/* Display screen */
+.display #screen {
+  margin-bottom: 0.5em;
+  width: 98%;
+  height: 65px;
+  font-size: 35px;
+  outline: none;
+  border: none;
+  text-align: right;
+  padding-right: 10px;
+  background: #e2eaeb;
+  /* Biru muda untuk layar */
+  color: #252323;
+  border-radius: 6px;
+}
+
+/* Evaluation button */
+#eval {
+  background: #6cbbc9;
+  /* Biru muda untuk tombol = */
+  color: #ffffff;
+}
+
+#eval:hover {
+  background: #1c4c58;
+  /* Biru lebih gelap saat hover */
+}
+
+/* AC button */
+#ac {
+  background: #ff0f0f;
+  /* Hijau muda untuk tombol AC */
+  color: #ffffff;
+}
+
+#ac:hover {
+  background: #920d0d;
+  /* Hijau lebih gelap saat hover */
+}
+
+/* CE button */
+#ce {
+  background: #ff0f0f;
+  /* Merah muda untuk tombol CE */
+  color: #ffffff;
+}
+
+#ce:hover {
+  background: #920d0d;
+  /* Merah lebih gelap saat hover */
+}
